@@ -7,196 +7,201 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f4f8;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            background-color: #f4f7f6;
             margin: 0;
             color: #333;
+        }
+        /* Barra superior calcada de la web oficial */
+        .top-bar {
+            background-color: #003a6c;
+            color: white;
+            font-size: 11px;
+            padding: 8px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .top-bar span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .nav-bar {
+            background-color: white;
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .nav-bar img {
+            height: 40px;
+        }
+        .nav-links {
+            font-size: 14px;
+            color: #666;
+            font-weight: bold;
+        }
+        
+        /* Contenedor de la boleta */
+        .main-container {
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
         }
         .card {
             background: white;
             width: 100%;
-            max-width: 450px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            padding: 30px;
+            max-width: 500px;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            padding: 40px;
             box-sizing: border-box;
-        }
-        .logo-container {
-            text-align: center;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #f0f4f8;
-            padding-bottom: 15px;
-        }
-        .logo-container img {
-            max-width: 250px;
-            height: auto;
+            border-top: 5px solid #ffcc00; /* Amarillo Credisalta */
         }
         .header-title {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
+            text-align: center;
+            margin-bottom: 30px;
         }
         .header-title h2 {
             margin: 0;
-            color: #0d325a; /* Azul marino oscuro */
-            font-size: 20px;
+            color: #003a6c;
+            font-size: 24px;
         }
         .header-title p {
             margin: 5px 0 0 0;
-            font-size: 12px;
+            font-size: 14px;
             color: #777;
-        }
-        .badge {
-            background-color: #f5b041; /* Amarillo/dorado */
-            color: #0d325a; /* Texto azul oscuro */
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: bold;
         }
         .details-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-bottom: 25px;
+            gap: 20px;
+            margin-bottom: 30px;
+            background-color: #f9fbfd;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #eee;
         }
         .detail-item span {
             display: block;
             font-size: 11px;
-            color: #0d325a; /* Azul marino */
+            color: #003a6c;
             text-transform: uppercase;
-            margin-bottom: 3px;
+            margin-bottom: 4px;
+            font-weight: bold;
         }
         .detail-item strong {
-            font-size: 14px;
+            font-size: 15px;
             color: #333;
         }
         .total-box {
-            border: 2px solid #0d325a; /* Borde azul marino */
-            border-radius: 10px;
+            text-align: center;
             padding: 20px;
-            position: relative;
-            margin-bottom: 20px;
-            background-color: #f8fbff;
+            margin-bottom: 30px;
+            background-color: #003a6c;
+            color: white;
+            border-radius: 8px;
         }
         .total-box span {
-            font-size: 11px;
-            color: #0d325a; /* Azul marino */
+            font-size: 12px;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
         .total-box .amount {
-            font-size: 32px;
+            font-size: 38px;
             font-weight: bold;
-            color: #0d325a; /* Azul marino */
-            margin: 5px 0;
+            margin: 10px 0;
+            color: #ffcc00; /* Amarillo Credisalta */
         }
         .total-box .breakdown {
-            font-size: 12px;
-            color: #666;
-            text-transform: none;
-        }
-        .currency-badge {
-            position: absolute;
-            right: 20px;
-            bottom: 20px;
-            background-color: #0d325a; /* Azul marino */
-            color: white;
-            padding: 5px 10px;
-            border-radius: 15px;
-            font-size: 12px;
-            font-weight: bold;
+            font-size: 13px;
+            color: #cddced;
         }
         .pay-button {
             width: 100%;
-            background-color: #f5b041; /* Amarillo/dorado */
-            color: #0d325a; /* Texto azul oscuro */
+            background-color: #ffcc00;
+            color: #003a6c;
             border: none;
-            padding: 15px;
-            border-radius: 8px;
-            font-size: 16px;
+            padding: 16px;
+            border-radius: 6px;
+            font-size: 18px;
             font-weight: bold;
             cursor: pointer;
             transition: background 0.3s;
         }
         .pay-button:hover {
-            background-color: #f1c40f;
+            background-color: #e6b800;
         }
     </style>
 </head>
 <body>
 
-<div class="card">
-    <div class="logo-container">
-        <img src="https://credisalta.com/wp-content/uploads/2021/05/logo_credisalta_horizontal.png" alt="Credisalta Logo">
-    </div>
+<div class="top-bar">
+    <span>✉ info@credisalta.com.ar</span>
+    <span>📍 Buenos Aires 396, Salta, CP 4400, Argentina</span>
+    <span>📞 4316932 - 4320406</span>
+</div>
+<div class="nav-bar">
+    <img src="logo-credisalta.png" alt="Logo Credisalta">
+    <div class="nav-links">PORTAL DE PAGOS</div>
+</div>
 
-    <div class="header-title">
-        <div>
-            <h2>Boleta de Pago</h2>
-            <p>Detalle de su deuda pendiente</p>
+<div class="main-container">
+    <div class="card">
+        <div class="header-title">
+            <h2>Boleta Electrónica</h2>
+            <p>Detalle de saldo pendiente para regularizar</p>
         </div>
-        <div class="badge">PENDIENTE</div>
-    </div>
 
-    <div class="details-grid">
-        <div class="detail-item">
-            <span>DNI</span>
-            <strong id="val-dni">XX.XXX.XXX</strong>
+        <div class="details-grid">
+            <div class="detail-item">
+                <span>DNI / CUIL</span>
+                <strong id="val-dni">Cargando...</strong>
+            </div>
+            <div class="detail-item">
+                <span>Titular</span>
+                <strong id="val-nombre">Cargando...</strong>
+            </div>
+            <div class="detail-item">
+                <span>Vencimiento</span>
+                <strong id="val-vencimiento">Cargando...</strong>
+            </div>
+            <div class="detail-item">
+                <span>Estado</span>
+                <strong style="color: #d9534f;">MORA AL DÍA</strong>
+            </div>
         </div>
-        <div class="detail-item">
-            <span>Deudor</span>
-            <strong id="val-nombre">Nombre Apellido</strong>
-        </div>
-        <div class="detail-item">
-            <span>Vencimiento</span>
-            <strong id="val-vencimiento">DD/MM/AAAA</strong>
-        </div>
-        <div class="detail-item">
-            <span>Tipo</span>
-            <strong>MORA</strong>
-        </div>
-    </div>
 
-    <div class="total-box">
-        <span>TOTAL A PAGAR</span>
-        <div class="amount" id="val-total">$ 0,00</div>
-        <div class="breakdown">
-            Capital: <span id="val-capital" style="text-transform: none;">$ 0,00</span> · Interés: <span id="val-interes" style="text-transform: none;">$ 0,00</span>
+        <div class="total-box">
+            <span>Importe Total a Pagar</span>
+            <div class="amount" id="val-total">$ 0,00</div>
+            <div class="breakdown">
+                Capital: <span id="val-capital" style="text-transform: none; font-size: 13px;">$ 0,00</span> | Interés: <span id="val-interes" style="text-transform: none; font-size: 13px;">$ 0,00</span>
+            </div>
         </div>
-        <div class="currency-badge">ARS</div>
-    </div>
 
-    <button class="pay-button">Pagar ahora</button>
+        <button class="pay-button">PAGAR AHORA</button>
+    </div>
 </div>
 
 <script>
-    // 1. Obtener los parámetros de la URL
     const urlParams = new URLSearchParams(window.location.search);
-    
-    // 2. Extraer las variables (si no existen, pone un texto por defecto)
     const dni = urlParams.get('dni') || 'No especificado';
     const nombre = urlParams.get('nombre') || 'Cliente Generico';
     const vencimiento = urlParams.get('vencimiento') || 'Pendiente';
-    
-    // Convertir capital e interes a números para sumarlos
     const capital = parseFloat(urlParams.get('capital')) || 0;
     const interes = parseFloat(urlParams.get('interes')) || 0;
     const total = capital + interes;
 
-    // 3. Función para formatear a pesos argentinos
     const formatearDinero = (monto) => {
         return new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS' }).format(monto);
     };
 
-    // 4. Inyectar los datos en el HTML
     document.getElementById('val-dni').innerText = dni;
     document.getElementById('val-nombre').innerText = nombre;
     document.getElementById('val-vencimiento').innerText = vencimiento;
-    
     document.getElementById('val-capital').innerText = formatearDinero(capital);
     document.getElementById('val-interes').innerText = formatearDinero(interes);
     document.getElementById('val-total').innerText = formatearDinero(total);
