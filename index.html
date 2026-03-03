@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boleta de Pago - Credisalta</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -11,44 +12,75 @@
             margin: 0;
             color: #333;
         }
-        /* Barra superior calcada de la web oficial */
+        
+        /* --- NUEVO NAVBAR ESTILO CREDISALTA OFICIAL --- */
+        .header-bg {
+            background-color: #052c54; /* Azul oscuro oficial */
+            padding-bottom: 40px; /* Espacio para que flote el menú blanco */
+        }
+        
         .top-bar {
-            background-color: #003a6c;
             color: white;
             font-size: 11px;
-            padding: 8px 20px;
+            padding: 12px 20px;
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 25px;
             flex-wrap: wrap;
         }
         .top-bar span {
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 8px;
+            letter-spacing: 0.5px;
         }
+        .top-bar i {
+            color: #ffcc00; /* Amarillo Credisalta para los íconos */
+            font-size: 13px;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-top: -30px; /* Sube el menú para que monte sobre el azul */
+            padding: 0 20px;
+        }
+        
         .nav-bar {
             background-color: white;
-            padding: 15px 50px;
+            width: 100%;
+            max-width: 1000px; /* Ancho de la barra flotante */
+            padding: 15px 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 8px; /* Bordes redondeaditos */
+            box-sizing: border-box;
         }
         .nav-bar img {
-            height: 40px;
+            height: 35px; /* Tamaño del logo */
         }
         .nav-links {
-            font-size: 14px;
-            color: #666;
-            font-weight: bold;
+            display: flex;
+            gap: 20px;
         }
-        
-        /* Contenedor de la boleta */
+        .nav-links a {
+            text-decoration: none;
+            color: #a0a0a0; /* Gris clarito igual a la imagen */
+            font-size: 13px;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover {
+            color: #052c54; /* Se pone azul al pasar el mouse */
+        }
+
+        /* --- CONTENEDOR DE LA BOLETA --- */
         .main-container {
             display: flex;
             justify-content: center;
-            padding: 40px 20px;
+            padding: 50px 20px;
         }
         .card {
             background: white;
@@ -58,7 +90,7 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
             padding: 40px;
             box-sizing: border-box;
-            border-top: 5px solid #ffcc00; /* Amarillo Credisalta */
+            border-top: 5px solid #ffcc00; /* Borde amarillo */
         }
         .header-title {
             text-align: center;
@@ -113,7 +145,7 @@
             font-size: 38px;
             font-weight: bold;
             margin: 10px 0;
-            color: #ffcc00; /* Amarillo Credisalta */
+            color: #ffcc00;
         }
         .total-box .breakdown {
             font-size: 13px;
@@ -134,18 +166,39 @@
         .pay-button:hover {
             background-color: #e6b800;
         }
+
+        /* Responsive para celulares */
+        @media (max-width: 800px) {
+            .nav-bar { flex-direction: column; gap: 15px; padding: 15px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; gap: 10px; }
+            .top-bar { flex-direction: column; align-items: center; gap: 10px; text-align: center; }
+        }
     </style>
 </head>
 <body>
 
-<div class="top-bar">
-    <span>✉ info@credisalta.com.ar</span>
-    <span>📍 Buenos Aires 396, Salta, CP 4400, Argentina</span>
-    <span>📞 4316932 - 4320406</span>
+<div class="header-bg">
+    <div class="top-bar">
+        <span><i class="fa-solid fa-envelope"></i> info@credisalta.com.ar</span>
+        <span><i class="fa-solid fa-location-arrow" style="transform: rotate(45deg);"></i> Buenos Aires 396, Salta, CP 4400, Argentina</span>
+        <span><i class="fa-solid fa-phone"></i> 4316932 - 4320406</span>
+        <span><i class="fa-brands fa-whatsapp"></i> +54 387 504-8757 (solo para comercios)</span>
+    </div>
 </div>
-<div class="nav-bar">
-    <img src="logo-credisalta.png.png" alt="Logo Credisalta">
-    <div class="nav-links">PORTAL DE PAGOS</div>
+
+<div class="nav-wrapper">
+    <div class="nav-bar">
+        <img src="logo-credisalta.png.png" alt="Logo Credisalta">
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Sobre Nosotros</a>
+            <a href="#">Servicios</a>
+            <a href="#">Comercios</a>
+            <a href="#">Acceso a Clientes</a>
+            <a href="#">Revista</a>
+            <a href="#">Contacto</a>
+        </div>
+    </div>
 </div>
 
 <div class="main-container">
@@ -209,4 +262,3 @@
 
 </body>
 </html>
-
